@@ -1,7 +1,6 @@
 
-@import "../../Styles/Mixins.module";
-@import "../../Styles/Variables.module";
-
+@import "../../Styles/Mixins";
+@import "../../Styles/Variables";
 
 .header__navigation {
   margin: 0 auto;
@@ -84,7 +83,7 @@
   max-width: 320px;
   background-color: #fff;
   z-index: 20;
-  transform: translateX(100%);
+  //transform: translateX(100%);
   transition: all .5s ease-in;
 
   @media (min-width: 992px) {
