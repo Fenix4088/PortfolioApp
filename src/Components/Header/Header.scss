@@ -40,10 +40,13 @@
 .header__content-description {
   width: 100%;
   max-width: 450px;
+  * {
+    text-align: left;
+  }
+
   @media (min-width: 768px) {
     width: 50%;
     max-width: 585px;
-
   }
 
   @media (min-width: 1200px) {
@@ -153,123 +156,3 @@
   }
 }
 
-// MY SKILS SECTION
-
-.header__my-skils-wrapper {
-  padding-top: 100px;
-  margin-top: -100px;
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: space-between;
-
-  @media (min-width: 768px) {
-    flex-flow: row nowrap;
-  }
-
-}
-
-.header__my-skils-title {
-  margin-bottom: 35px;
-  @include title-small;
-}
-
-.header__my-skils-lists {
-  margin-bottom: 40px;
-}
-
-.header__my-skils-list {
-  padding-left: 0;
-  margin-bottom: 15px;
-  position: relative;
-  font-weight: 400;
-  line-height: 1.5;
-  @include big-paragraph;
-  &::after {
-    content: none;
-    position: absolute;
-    top: 20px;
-    left: 0;
-    width: 24px;
-    height: 1.5px;
-    background-color: #333;
-    @media (min-width: 768px) {
-
-    }
-
-    @media (min-width: 1200px) {
-      content: '';
-    }
-  }
-
-  &:last-child {
-    margin-bottom: 0;
-  }
-
-  @media (min-width: 768px) {
-    margin-bottom: 0;
-  }
-
-  @media (min-width: 1200px) {
-    padding-left: 32px;
-  }
-}
-
-.header__my-skils-btn {
-  display: none;
-  @include color-btn;
-
-  @media (min-width: 768px) {
-  }
-
-  @media (min-width: 1200px) {
-    display: inline-block;
-  }
-}
-
-.header__intouch {
-  display: flex;
-  flex-flow: column nowrap;
-
-  @media (min-width: 768px) {
-    width: 33%;
-    max-width: 360px;
-  }
-
-  @media (min-width: 1200px) {
-
-  }
-}
-
-.header__intouch-title {
-  margin-bottom: 35px;
-  @include title-small;
-}
-
-.header__intouch-links {
-  margin-bottom: 15px;
-}
-
-.header__intouch-email {
-  font-size: 18px;
-  font-weight: 400;
-  text-align: center;
-  color: #000;
-  text-decoration: underline;
-  &:hover {
-    color: #46b6ec;
-  }
-
-  &:active {
-    color: #f4adaa;
-  }
-
-  @media (min-width: 768px) {
-    font-size: 20px;
-    text-align: left;
-
-  }
-
-  @media (min-width: 1200px) {
-    font-size: 24px;
-  }
-}

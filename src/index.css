@@ -207,6 +207,7 @@ textarea {
 }
 
 .fa-linkedin-in {
+    color: #000;
     transition: all .2s ease-in;
 }
 
