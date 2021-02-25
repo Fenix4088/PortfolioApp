@@ -14,6 +14,7 @@ import budgetCalcL from "../img/projects-screenshots/budget-calculator.jpg";
 
 export const projectsData = {
   unit: {
+    id: "unit",
     linkTitle: "Project 'Unit'",
     title: "Unit project",
     type: "Landing-page project",
@@ -33,6 +34,7 @@ export const projectsData = {
     },
   },
   stay_and_ski: {
+    id: "stay_and_ski",
     linkTitle: "Project 'Stay and Ski'",
     title: "Stay & Ski",
     type: "Landing-page project",
@@ -52,6 +54,7 @@ export const projectsData = {
     },
   },
   todoJS: {
+    id: "todoJS",
     linkTitle: 'Project "To Do Application"',
     title: "ToDo application",
     type: "Frontend application",
@@ -73,6 +76,7 @@ export const projectsData = {
     },
   },
   crmJS: {
+    id: "crmJS",
     linkTitle: 'Project "CRM System"',
     title: "CRM System",
     type: "Frontend application",
@@ -94,6 +98,7 @@ export const projectsData = {
     },
   },
   budgetCalc: {
+    id: "budgetCalc",
     linkTitle: 'Project "Budget Calculator"',
     title: "Budget Calculator",
     type: "Frontend application",
@@ -115,6 +120,7 @@ export const projectsData = {
     },
   },
   squareMeter: {
+    id: "squareMeter",
     linkTitle: 'Square meter project',
     title: "Square Meter project",
     type: "Frontend application",

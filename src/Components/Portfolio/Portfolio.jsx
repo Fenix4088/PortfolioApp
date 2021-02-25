@@ -5,7 +5,6 @@ import {ProjectsDataContext} from "../../index";
 
 export const Portfolio = () => {
     const projectsData = useContext(ProjectsDataContext);
-    console.log(projectsData)
     return (
         <section className="portfolio" id="portfolio">
 
@@ -23,7 +22,8 @@ export const Portfolio = () => {
                 </div>
 
                 <div className="portfolio__projects-wrapper" id="portfolio-project-filter">
-                    <Project/>
+                    {Object.keys(projectsData).reverse().map((p, i) => <Project key={i} data={projectsData[p]}/>)}
+
                 </div>
 
                 <div className="portfolio__toggles-link">
