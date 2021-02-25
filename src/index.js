@@ -4,11 +4,16 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {HashRouter} from "react-router-dom";
+import {projectsData} from "./assets/data/projectsData";
+
+export const ProjectsDataContext = React.createContext(projectsData);
 
 ReactDOM.render(
   <React.StrictMode>
       <HashRouter>
-          <App />
+          <ProjectsDataContext.Provider value={projectsData}>
+              <App />
+          </ProjectsDataContext.Provider>
       </HashRouter>
   </React.StrictMode>,
   document.getElementById('root')

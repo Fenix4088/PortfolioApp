@@ -1,0 +1,124 @@
+
+@import "../../Styles/Mixins";
+@import "../../Styles/Variables";
+
+.portfolio__card {
+  margin-bottom: 40px;
+  width: 100%;
+  max-width: 290px;
+
+  @media (min-width: 768px) {
+    margin-bottom: 50px;
+    width: 48.68%;
+    max-width: 338px;
+
+  }
+
+  @media (min-width: 1200px) {
+    margin-bottom: 60px;
+    max-width: 360px;
+    width: 31.57%;
+  }
+}
+
+.portfolio__project-img {
+  margin-bottom: 30px;
+  position: relative;
+  overflow: hidden;
+  &::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(251, 220, 77, .8);
+    cursor: pointer;
+    transition: all .2s ease-in;
+    z-index: 10;
+  }
+  &:hover::after {
+    top: 0;
+  }
+
+  &:hover .portfolio__project-btn {
+    left: 50%;
+  }
+}
+
+.portfolio__project-btn {
+  padding: 12px 50px;
+  display: inline-block;
+  font-size: 22px;
+  font-weight: bold;
+  position: absolute;
+  bottom: 50%;
+  left: -50%;
+  border-radius: 30px;
+  color: #ea736d;
+  background-color: rgb(255, 255, 255);
+  transform: translate(-50%, 50%);
+  transition: all .2s ease-in;
+  z-index: 11;
+  &:hover {
+    background-color: $red-main;
+    color: rgba(255, 255, 255, .8);
+  }
+
+  &:active {
+    background-color: #d4423b;
+    color: #fff;
+  }
+}
+
+.portfolio__project-title {
+  margin-bottom: 7px;
+  font-size: 22px;
+  font-weight: bold;
+  color: #000;
+  transition: all .1s ease-in;
+  &:hover {
+    color: $red-main;
+    text-decoration: underline;
+  }
+
+  @media (min-width: 768px) {
+    font-size: 24px;
+  }
+
+  @media (min-width: 1200px) {
+    font-size: 32px;
+  }
+}
+
+.portfolio__project-title--small {
+  margin-bottom: 7px;
+  font-size: 22px;
+  color: #000;
+  @media (min-width: 768px) {
+    font-size: 24px;
+
+  }
+
+  @media (min-width: 1200px) {
+    font-size: 26px;
+  }
+}
+
+.portfolio__project-description {
+  font-size: 16px;
+  font-weight: 300;
+  @media (min-width: 768px) {
+    font-size: 18px;
+  }
+
+  @media (min-width: 1200px) {
+    font-size: 22px;
+  }
+
+}
+
+.portfolio__project-description--small {
+  margin-bottom: 0;
+  font-size: 20px;
+}

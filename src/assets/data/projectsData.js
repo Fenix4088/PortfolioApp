@@ -93,6 +93,27 @@ export const projectsData = {
       big: crmL,
     },
   },
+  budgetCalc: {
+    linkTitle: 'Project "Budget Calculator"',
+    title: "Budget Calculator",
+    type: "Frontend application",
+    label: "js",
+    mainTech: ["html", "css", "bootstrap", "javascript"],
+    links: {
+      demo: "https://fenix4088.github.io/BudgetCalculator/",
+      git: "https://github.com/Fenix4088/BudgetCalculator",
+    },
+    desc:
+        "Budget Calculator application is designed for home bookkeeping. With Budget Calculator, you can easily keep track of your expenses and income as well as track your total budget.",
+    project: 'Frontend project "Budget Calculator"',
+    allTech: ["HTML", "CSS", "Bootstrap", "JS"],
+    features:
+        "The application allows you to add expenses and income into the table. The percentage is calculated for both separately recorded expenses and all general expenses in relation to total income. It is also possible to remove each element from the table",
+    images: {
+      small: budgetCalcS,
+      big: budgetCalcL,
+    },
+  },
   squareMeter: {
     linkTitle: 'Square meter project',
     title: "Square Meter project",
@@ -114,25 +135,4 @@ export const projectsData = {
       big: squareMeterL,
     },
   },
-  budgetCalc: {
-    linkTitle: 'Project "Budget Calculator"',
-    title: "Budget Calculator",
-    type: "Frontend application",
-    label: "js",
-    mainTech: ["html", "css", "bootstrap", "javascript"],
-    links: {
-      demo: "https://fenix4088.github.io/BudgetCalculator/",
-      git: "https://github.com/Fenix4088/BudgetCalculator",
-    },
-    desc:
-        "Budget Calculator application is designed for home bookkeeping. With Budget Calculator, you can easily keep track of your expenses and income as well as track your total budget.",
-    project: 'Frontend project "Budget Calculator"',
-    allTech: ["HTML", "CSS", "Bootstrap", "JS"],
-    features:
-        "The application allows you to add expenses and income into the table. The percentage is calculated for both separately recorded expenses and all general expenses in relation to total income. It is also possible to remove each element from the table",
-    images: {
-      small: budgetCalcS,
-      big: budgetCalcL,
-    },
-  }
 };
