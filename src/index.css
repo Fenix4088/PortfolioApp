@@ -215,6 +215,15 @@ textarea {
     color: #0077b5;
 }
 
+.fa-linkedin {
+    color: #0a66c2;
+    transition: all .2s ease-in;
+}
+
+.fa-linkedin:hover {
+    color: #0077b5;
+}
+
 .fa-github {
     color: #000;
     transition: all .2s ease-in;

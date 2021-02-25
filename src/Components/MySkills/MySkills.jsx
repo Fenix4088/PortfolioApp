@@ -2,6 +2,7 @@ import React from "react"
 import "./MySkills.scss"
 import {faFacebook, faGithub, faLinkedin, faTelegram} from "@fortawesome/free-brands-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {projectsData} from "../../assets/data/projectsData";
 
 export const MySkills = () => {
     return (
@@ -42,7 +43,7 @@ export const MySkills = () => {
                             </a>
 
                             <a href="https://www.linkedin.com/in/yehor-pliasov-5776981a2/" target="_blank">
-                                <FontAwesomeIcon icon={faLinkedin} size={"3x"} className={"fa-linkedin-in"}/>
+                                <FontAwesomeIcon icon={faLinkedin} size={"3x"} className={"fa-linkedin"}/>
                             </a>
 
                             <a href="https://www.facebook.com/profile.php?id=100013553615468" target="_blank">
