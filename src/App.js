@@ -3,7 +3,7 @@ import './App.css';
 import {Navigation} from "./Components/Navigation/Navigation";
 import {Home} from "./Components/Home/Home";
 import {Switch, Route} from "react-router-dom";
-import {ProjectInfo, ProjectInfoContainer} from "./Components/ProjectInfo/ProjectInfo";
+import {ProjectInfoContainer} from "./Components/ProjectInfo/ProjectInfo";
 
 function App() {
   return (
