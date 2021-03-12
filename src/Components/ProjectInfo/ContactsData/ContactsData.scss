@@ -1,0 +1,79 @@
+@import "../../../Styles/Mixins";
+@import "../../../Styles/Variables";
+
+.header--bg {
+
+  @media (min-width: 1200px) {
+    background-color: $background-grey;
+  }
+}
+
+.contacts-data {
+  // padding: 160px 0 460px;
+  margin: 0 auto;
+  max-width: 1600px;
+  font-family: "Roboto";
+  text-align: center;
+  color: rgb(22, 22, 22);
+}
+
+
+.contacts-data__img {
+  margin-top: -200px;
+  padding-top: 142px;
+  z-index: 2;
+}
+
+
+.contacts-data__wrapper {
+  margin-top: 50px;
+  position: relative;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.contacts-data__wrapper > .intouch-block {
+  width: 100%;
+  justify-content: space-around;
+
+}
+
+.contacts-data__title {
+  margin-bottom: 20px;
+  font-size: 28px;
+  font-weight: bold;
+
+  @media (min-width: 768px) {
+    font-size: 38px;
+  }
+
+  @media (min-width: 1200px) {
+    margin-bottom: 30px;
+    font-size: 42px;
+  }
+}
+
+.contacts-data__link {
+  margin-bottom: 30px;
+  font-size: 22px;
+  font-weight: 300;
+  a {
+    text-decoration: underline;
+    color: #4398e8;
+    &:active {
+      color: $red-main;
+    }
+  }
+
+  @media (min-width: 768px) {
+    font-size: 30px;
+
+  }
+
+  @media (min-width: 1200px) {
+    font-size: 36px;
+  }
+}

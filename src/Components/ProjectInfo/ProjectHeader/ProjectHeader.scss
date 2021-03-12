@@ -1,0 +1,58 @@
+@import "../../../Styles/Mixins";
+@import "../../../Styles/Variables";
+
+.header--project-info {
+  padding-bottom: 0;
+}
+
+.project-info {
+  padding: 55px 0 30px;
+
+  @media (min-width: 768px) {
+    padding: 70px 0 36px;
+
+  }
+
+  @media (min-width: 1200px) {
+    padding: 100px 0 76px;
+
+  }
+}
+
+.project-info__title {
+  margin-bottom: 40px;
+  text-align: center;
+  @include title-big;
+}
+
+.project-info__technology {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  text-align: center;
+}
+
+.project-info__technology-item {
+  margin-right: 12px;
+  margin-bottom: 10px;
+  padding: 5px 8px;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #fff;
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+// TECHNOLOGY STYLES
+
+.project-info__technology-item--html { background-color: $color-html;}
+.project-info__technology-item--css { background-color: $color-css;}
+.project-info__technology-item--bootstrap { background-color: $color-bootstrap;}
+.project-info__technology-item--javascript { background-color: $color-js;}
+.project-info__technology-item--jquery { background-color: $color-jquery;}
+.project-info__technology-item--php { background-color: $color-php;}
+
+// /TECHNOLOGY STYLES
+

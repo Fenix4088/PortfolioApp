@@ -1,6 +1,6 @@
 import React from "react";
-import {faCss3Alt, faFacebook, faHtml5, faJsSquare, faReact,} from "@fortawesome/free-brands-svg-icons";
-import {faCode, faHome, faUniversity} from "@fortawesome/free-solid-svg-icons";
+import {faJsSquare, faReact,} from "@fortawesome/free-brands-svg-icons";
+import {faCode, faUniversity} from "@fortawesome/free-solid-svg-icons";
 
 export const timelineData = [
   {
