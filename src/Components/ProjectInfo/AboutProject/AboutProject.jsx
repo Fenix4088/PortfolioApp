@@ -3,11 +3,12 @@ import "./AboutProject.scss"
 
 export const AboutProject = (props) => {
   console.log(props.data);
-  const { links, desc, project, allTech, features } = props.data;
+  const { links, desc, project, allTech, features, images} = props.data;
   return (
     <section className="about-project">
       <div className="container">
         <div className="project-wrapper">
+
           <div className="about-project__info">
             <div className="about-project__links-wrap">
               <div className="about-project__wrapper--mobile">
@@ -100,10 +101,10 @@ export const AboutProject = (props) => {
               </div>
             </div>
           </div>
-
           <div className="about-project__img">
+
             <img
-              src="../img/projects-screenshots/budget-calculator.jpg"
+              src={images.big}
               alt="budget-calculator"
             />
           </div>

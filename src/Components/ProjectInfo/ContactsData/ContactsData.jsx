@@ -12,10 +12,10 @@ export const ContactsData = () => {
             If you whant to creat a WebSite:
           </div>
           <div className="contacts-data__link">
-            send me a message
+            send me a message&nbsp;
             <a href="mailto:fenix4088@gmail.com">fenix4088@gmail.com</a>
           </div>
-          <Intouch/>
+          <Intouch size={"2x"} showTitle={false} showEmail={false}/>
         </div>
       </div>
       <div className="contacts-data__img">

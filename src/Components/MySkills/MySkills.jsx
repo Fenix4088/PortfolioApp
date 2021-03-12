@@ -30,7 +30,7 @@ export const MySkills = () => {
                         <a href="./pages/projects-page.html" className="header__my-skils-btn">My projects</a>
                     </div>
 
-                    <Intouch/>
+                    <Intouch size={"3x"} showTitle={true} showEmail={true}/>
                 </section>
             </div>
         </div>
