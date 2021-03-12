@@ -21,7 +21,7 @@ export const timelineData = [
     dates: "2013 - March 2014",
     icon: {
       icon: faUniversity,
-      class: "fa-university",
+      class: "fa-university--specialist",
     },
   },
   {
