@@ -1,6 +1,6 @@
 import React from "react";
-import {faFacebook, faHtml5, faJs, faJsSquare, faLinkedin, faReact,} from "@fortawesome/free-brands-svg-icons";
-
+import {faCss3Alt, faFacebook, faHtml5, faJsSquare, faReact,} from "@fortawesome/free-brands-svg-icons";
+import {faCode, faHome, faUniversity} from "@fortawesome/free-solid-svg-icons";
 
 export const timelineData = [
   {
@@ -10,8 +10,8 @@ export const timelineData = [
       "Engineering and Technology Faculty\n",
     dates: "2009 - March 2013",
     icon: {
-      icon: "",
-      class: "fa-linkedin",
+      icon: faUniversity,
+      class: "fa-university",
     },
   },
   {
@@ -20,8 +20,8 @@ export const timelineData = [
         "Engineering and Technology Faculty\n",
     dates: "2013 - March 2014",
     icon: {
-      icon: faFacebook,
-      class: "fa-facebook",
+      icon: faUniversity,
+      class: "fa-university",
     },
   },
   {
@@ -29,8 +29,8 @@ export const timelineData = [
     desc: "HTML, CSS coding, responsive web design, PixelPerfect, Bootsrtap, basics of JS, jQuery",
     dates: "2013 - March 2014",
     icon: {
-      icon: faHtml5,
-      class: "fa-facebook",
+      icon: faCode,
+      class: "fa-code",
     },
   },
   {
