@@ -1,8 +1,11 @@
 import React from "react";
 import "./Header.scss"
 import avatar from "../../assets/img/header/avatar.jpg"
+import { Link } from "react-router-dom";
+import {HashLink} from "react-router-hash-link";
 
-export const HeaderContent = () => {
+export const HeaderContent = (props) => {
+
     return (
         <div className={"container"}>
             <div className="header__content-wrapper">
@@ -13,7 +16,8 @@ export const HeaderContent = () => {
                     </h1>
                     <p>Front-end developer.<br/>Quality, efficiency, compliance with deadlines and technical tasks.</p>
                     <div className="header__btn-container">
-                        <a href="#aboutMe" className="color-btn header__btn">About me</a>
+                        {/*<a href="#aboutMe" className="color-btn header__btn">About me</a>*/}
+                        <HashLink  to="#aboutMe"  className="color-btn header__btn">About me</HashLink >
                         <a href="./pages/contacts-page.html" className="colorless-btn header__btn">Contacts</a>
                     </div>
                 </div>

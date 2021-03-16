@@ -5,13 +5,14 @@ import headerBg from "../../assets/img/backgrounds/header-bg.png"
 import {MySkills} from "../MySkills/MySkills";
 
 export const Header = () => {
-  return (
+
+    return (
     <header className="header" id="header" style={{backgroundImage: `url(${line})`}}>
         <HeaderContent/>
         <div className="header__image">
             <img src={headerBg} alt="Computer imag"/>
         </div>
-        <MySkills/>
+        <MySkills id="aboutMe"/>
     </header>
   );
 };

@@ -7,7 +7,7 @@ export const MySkills = () => {
     return (
         <div>
             <div className="container">
-                <section className="header__my-skils-wrapper" id="aboutMe">
+                <section className="header__my-skils-wrapper" id="aboutMe" >
                     <div className="header__my-skils">
                         <h3 className="header__my-skils-title">My skills:</h3>
                         <ul className="header__my-skils-lists">
