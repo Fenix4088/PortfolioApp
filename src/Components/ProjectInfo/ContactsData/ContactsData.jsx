@@ -15,7 +15,7 @@ export const ContactsData = () => {
             send me a message&nbsp;
             <a href="mailto:fenix4088@gmail.com">fenix4088@gmail.com</a>
           </div>
-          <Intouch size={"2x"} showTitle={false} showEmail={false}/>
+          <Intouch size={"3x"} showTitle={false} showEmail={false}/>
         </div>
       </div>
       <div className="contacts-data__img">
