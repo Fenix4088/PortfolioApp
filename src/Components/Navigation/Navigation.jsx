@@ -8,7 +8,6 @@ import {
     faLinkedin,
     faLinkedinIn,
     faTelegram,
-    faVk
 } from "@fortawesome/free-brands-svg-icons";
 import gbFlag from "../../assets/img/header/uk.png"
 import ruFlag from "../../assets/img/header/ru.png"

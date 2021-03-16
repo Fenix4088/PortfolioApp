@@ -11,7 +11,7 @@ function App() {
         <Navigation />
         <Switch>
             <Route exact path="/"  render={() => <Home/>}/>
-            <Route exact path="/projectPage/:projectName"  render={() => <ProjectInfoContainer/>}/>
+            <Route exact path="/projectPage/:projectName" render={() => <ProjectInfoContainer/>}/>
         </Switch>
     </div>
   );

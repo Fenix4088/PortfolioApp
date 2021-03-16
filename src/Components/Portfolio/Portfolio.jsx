@@ -1,4 +1,4 @@
-import React, {useContext, useReducer} from "react";
+import React, {useContext} from "react";
 import "./Portfolio.scss"
 import {Project} from "../Project/Project";
 import {ProjectsDataContext} from "../../index";
