@@ -2,6 +2,7 @@ import React from "react"
 import "./MySkills.scss"
 
 import {Intouch} from "../CommonComponents/IntouchBlock/Intouch";
+import {PortfolioBTN} from "../CommonComponents/PortfolioBTN/PortfolioBTN";
 
 export const MySkills = () => {
     return (
@@ -12,22 +13,34 @@ export const MySkills = () => {
                         <h3 className="header__my-skils-title">My skills:</h3>
                         <ul className="header__my-skils-lists">
                             <li className="header__my-skils-list">
-                                pixel perfect, complete complines of design
+                                HTML, CSS(SCSS/LESS), RWD, AWD
                             </li>
                             <li className="header__my-skils-list">
-                                responsive and adaptive web design
+                                JavaScript, TypeScript
                             </li>
                             <li className="header__my-skils-list">
-                                retina screens optimisation
+                                React.js + Redux
                             </li>
                             <li className="header__my-skils-list">
-                                with Bootstrap and with out it
+                                Photoshop, Figma, Avocode
                             </li>
                             <li className="header__my-skils-list">
-                                using grids for making flexible pages
+                                GIT
+                            </li>
+                            <li className="header__my-skils-list">
+                                UNIT-test(JEST), Storybook, TDD
+                            </li>
+                            <li className="header__my-skils-list">
+                                Material-UI, Ant Design, styled-components, module-css, Axios, REST API
                             </li>
                         </ul>
-                        <a href="./pages/projects-page.html" className="header__my-skils-btn">My projects</a>
+                        <PortfolioBTN
+                            path={"#"}
+                            linkType={"nav"}
+                            theme={"color"}
+                            title={"Download CV"}
+                            additionalClass={"header__my-skils-btn"}
+                        />
                     </div>
 
                     <Intouch size={"3x"} showTitle={true} showEmail={true}/>

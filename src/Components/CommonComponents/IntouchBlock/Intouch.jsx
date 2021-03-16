@@ -14,7 +14,7 @@ export const Intouch = (props) => {
     <div className="header__intouch">
       {showTitle && <h3 className="header__intouch-title">Contacts:</h3>}
       <div className="header__intouch-links intouch-block">
-        <a href="https://github.com/Fenix4088?tab=repositories" target="_blank">
+        <a href="https://github.com/Fenix4088" target="_blank">
           <FontAwesomeIcon
             icon={faGithub}
             size={size}
@@ -22,7 +22,7 @@ export const Intouch = (props) => {
           />
         </a>
 
-        <a href="#">
+        <a href="tg://resolve?domain=Yehor1991">
           <FontAwesomeIcon
             icon={faTelegram}
             size={size}
