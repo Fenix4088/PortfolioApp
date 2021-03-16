@@ -1,21 +1,18 @@
-import React, {useContext} from "react";
+import React, { useContext } from "react";
 import "./AboutProject.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faWindowMaximize } from "@fortawesome/free-regular-svg-icons";
+import {faArrowAltCircleLeft, faArrowAltCircleRight, faWindowMaximize} from "@fortawesome/free-regular-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { NavLink } from "react-router-dom";
-import {ProjectsDataContext} from "../../../index";
+import { ProjectsDataContext } from "../../../index";
 
 export const AboutProject = (props) => {
-
   const { links, desc, project, allTech, features, images } = props.data;
   const currentPageId = props.data.id;
 
-
-
   return (
     <section className="about-project">
-      <div className="container">
+      <div className="container" style={{position: "relative"}}>
         <div className="project-wrapper">
           <div className="about-project__info">
             <div className="about-project__links-wrap">
@@ -36,66 +33,62 @@ export const AboutProject = (props) => {
           </div>
         </div>
 
-        <SubNavigation currentPage={currentPageId}/>
-
-        {/*<div className="about-project__buttons">*/}
-        {/*  <NavLink*/}
-        {/*    to="/projectPage/projectName"*/}
-        {/*    className="about-project__button-previous"*/}
-        {/*  >*/}
-        {/*    Previous project*/}
-        {/*  </NavLink>*/}
-        {/*  <NavLink to="/projectPage/projectName" className="about-project__button-next">*/}
-        {/*    Next project*/}
-        {/*  </NavLink>*/}
-        {/*</div>*/}
+        <SubNavigation currentPage={currentPageId} />
       </div>
     </section>
   );
 };
-
 
 export const SubNavigation = (props) => {
   const projectsData = useContext(ProjectsDataContext);
   const allPagesIds = Object.keys(projectsData).reverse();
 
   const getPagesDirection = (currentPage, allProjectsIds) => {
-    return allProjectsIds.reduce((acc, currentElem, i, arr) => {
-      if(currentElem === currentPage) {
-        if(arr[i+1]) {
-          acc.nextPage = arr[i+1];
-        } else {
-          acc.nextPage = arr[0]
+    return allProjectsIds.reduce(
+      (acc, currentElem, i, arr) => {
+        if (currentElem === currentPage) {
+          if (arr[i + 1]) {
+            acc.nextPage = arr[i + 1];
+          } else {
+            acc.nextPage = arr[0];
+          }
+
+          if (arr[i - 1]) {
+            acc.prevPage = arr[i - 1];
+          } else {
+            acc.prevPage = arr[arr.length - 1];
+          }
         }
+        return acc;
+      },
+      { prevPage: "", nextPage: "" }
+    );
+  };
 
-        if(arr[i-1]) {
-          acc.prevPage = arr[i-1];
-        } else {
-          acc.prevPage = arr[arr.length - 1];
-        }
+  const { prevPage, nextPage } = getPagesDirection(
+    props.currentPage,
+    allPagesIds
+  );
 
-      }
-      return acc;
-    }, {prevPage: "", nextPage: ""})
+  return (
+    <div className="about-project__buttons">
 
-  }
-
-  const {prevPage, nextPage} = getPagesDirection(props.currentPage, allPagesIds);
-
-  return(
-        <div className="about-project__buttons">
-          <NavLink
-              to={`/projectPage/${prevPage}`}
-              className="about-project__button-previous"
-          >
-            Previous project
-          </NavLink>
-          <NavLink to={`/projectPage/${nextPage}`} className="about-project__button-next">
-            Next project
-          </NavLink>
-        </div>
-    )
-}
+      <NavLink
+        to={`/projectPage/${prevPage}`}
+        className="about-project__button-previous"
+      >
+        <span></span>
+        <FontAwesomeIcon icon={faArrowAltCircleLeft} size={"3x"}/>
+      </NavLink>
+      <NavLink
+        to={`/projectPage/${nextPage}`}
+        className="about-project__button-next"
+      >
+        <FontAwesomeIcon icon={faArrowAltCircleRight} size={"3x"}/>
+      </NavLink>
+    </div>
+  );
+};
 
 export const ProjectDescription = (props) => {
   const { links, desc } = props;

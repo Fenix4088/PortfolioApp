@@ -169,31 +169,38 @@
 
 }
 
-
 .about-project__details-data--link a{
   @include blue-link;
 }
 
+
 .about-project__buttons {
   display: flex;
   justify-content: space-between;
+  width: 100%;
+
+
+  @media (min-width: 768px) {
+    position: fixed;
+    top: 50%;
+    left: 0;
+  }
+
 }
 
 .about-project__button-previous,
 .about-project__button-next {
-  width: 100%;
-  text-align: center;
+  position: relative;
+  outline: none;
   @include dark-btn;
-  @media (min-width: 768px) {
-    width: 49%;
-  }
-
 }
 
 .about-project__button-previous {
-  display: none;
-
-  @media (min-width: 768px) {
-    display: inline-block;
-  }
+  left: 20px;
 }
+
+.about-project__button-next {
+  right: 20px;
+}
+
+
