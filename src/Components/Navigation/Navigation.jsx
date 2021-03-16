@@ -9,27 +9,19 @@ import {
     faLinkedinIn,
     faTelegram,
 } from "@fortawesome/free-brands-svg-icons";
-import gbFlag from "../../assets/img/header/uk.png"
-import ruFlag from "../../assets/img/header/ru.png"
+// import gbFlag from "../../assets/img/header/uk.png"
+// import ruFlag from "../../assets/img/header/ru.png"
 
 export const Navigation = () => {
     return (
-        <div className="fixed-wrapper">
+        <div className="fixed-wrapper nav-fixed">
 
             <nav className="header__navigation">
                 <div className="header__navigation-logo">
                         <span className="title-line">
                             <a href="./index.html">YP</a>
                         </span>
-
                 </div>
-
-{/*                <div className="header__burger-wrap">
-                    <label className="header__burger-label">
-                        <input type="checkbox" className="header__burger-checkbox"/>
-                            <span className="header__burger"></span>
-                    </label>
-                </div>*/}
 
                 <div className="header__navigation-block">
                     <ul className="header__navigation-list">
@@ -63,14 +55,14 @@ export const Navigation = () => {
                         </a>
                     </div>
 
-                    <div className="header__navigation-language header__navigation-language--mobile">
-                        <a href="./indexRU.html">
-                            <img src={ruFlag} alt="Russian flag"/>
-                        </a>
-                        <a href="./index.html">
-                            <img src={gbFlag} alt="England flag"/>
-                        </a>
-                    </div>
+                    {/*<div className="header__navigation-language header__navigation-language--mobile">*/}
+                    {/*    <a href="./indexRU.html">*/}
+                    {/*        <img src={ruFlag} alt="Russian flag"/>*/}
+                    {/*    </a>*/}
+                    {/*    <a href="./index.html">*/}
+                    {/*        <img src={gbFlag} alt="England flag"/>*/}
+                    {/*    </a>*/}
+                    {/*</div>*/}
 
                     <div className="header__naviation-email mobile-email">
                         <a href="mailto:fenix4088@gmail.com">fenix4088@gmail.com</a>
@@ -78,14 +70,14 @@ export const Navigation = () => {
 
                 </div>
 
-                <div className="header__navigation-language">
-                    <a href="#">
-                        <img src={gbFlag} alt="Russian flag"/>
-                    </a>
-                    <a href="#">
-                        <img src={ruFlag} alt="England flag"/>
-                    </a>
-                </div>
+                {/*<div className="header__navigation-language">*/}
+                {/*    <a href="#">*/}
+                {/*        <img src={gbFlag} alt="Russian flag"/>*/}
+                {/*    </a>*/}
+                {/*    <a href="#">*/}
+                {/*        <img src={ruFlag} alt="England flag"/>*/}
+                {/*    </a>*/}
+                {/*</div>*/}
 
                 <div className="header__navigation-icons">
                     <div className="header__navigation-icon linkedin-icon">
