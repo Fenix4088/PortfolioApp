@@ -178,6 +178,7 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
+  z-index: 100;
 
 
   @media (min-width: 768px) {
@@ -192,6 +193,8 @@
 .about-project__button-next {
   position: relative;
   outline: none;
+  border-radius: 50%;
+  backdrop-filter: blur(10px);
   @include dark-btn;
 }
 
