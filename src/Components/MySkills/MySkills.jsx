@@ -1,5 +1,6 @@
 import React from "react"
 import "./MySkills.scss"
+import cv from "../../assets/docs/PLIASOV_CV.pdf"
 
 import {Intouch} from "../CommonComponents/IntouchBlock/Intouch";
 import {PortfolioBTN} from "../CommonComponents/PortfolioBTN/PortfolioBTN";
@@ -35,8 +36,8 @@ export const MySkills = () => {
                             </li>
                         </ul>
                         <PortfolioBTN
-                            path={"#"}
-                            linkType={"nav"}
+                            path={cv}
+                            linkType={"download"}
                             theme={"color"}
                             title={"Download CV"}
                             additionalClass={"header__my-skils-btn"}
