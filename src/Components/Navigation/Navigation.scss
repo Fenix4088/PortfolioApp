@@ -143,9 +143,8 @@
   }
 }
 
-.intouch-block--mobile.intouch-block {
+.header__navigation--intouch {
   margin-bottom: 20px;
-  display: flex;
 
   @media (min-width: 992px) {
     display: none;

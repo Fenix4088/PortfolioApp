@@ -9,6 +9,7 @@ import {
   faGithub,
   faLinkedinIn,
 } from "@fortawesome/free-brands-svg-icons";
+import {Intouch} from "../CommonComponents/IntouchBlock/Intouch";
 
 export const Navigation = ({menuStatus, setMenuStatus, ...props}) => {
   const [blockScroll, allowScroll] = useScrollBlock();
@@ -70,6 +71,10 @@ export const Navigation = ({menuStatus, setMenuStatus, ...props}) => {
               <a href="./pages/contacts-page.html">Contacts</a>
             </li>
           </ul>
+
+          <div className="header__navigation--intouch">
+            <Intouch size={"2x"}/>
+          </div>
 
           <div className="header__naviation-email mobile-email">
             <a href="mailto:fenix4088@gmail.com">fenix4088@gmail.com</a>
