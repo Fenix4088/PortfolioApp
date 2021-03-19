@@ -2,23 +2,33 @@ import React, { useEffect, useState } from "react";
 import "./Navigation.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import useResizeObserver from "use-resize-observer";
+import useScrollBlock from "../../utils/blockScroll";
+
 import {
   faFacebookF,
   faGithub,
   faLinkedinIn,
 } from "@fortawesome/free-brands-svg-icons";
 
-
 export const Navigation = () => {
-  const [menuStatus, setMenuStatus] = useState(false);
-  const toggleMenu = () => setMenuStatus(!menuStatus);
+  const [blockScroll, allowScroll] = useScrollBlock();
+
   const { ref, width = 1, height = 1 } = useResizeObserver();
+  const [menuStatus, setMenuStatus] = useState(false);
+
+  const toggleMenu = () => setMenuStatus(!menuStatus);
 
   const navigationBlockStyle = {
     right: `${menuStatus || width > 991 ? "0px" : "-400px"}`,
   };
 
   useEffect(() => {
+    if (menuStatus) {
+      blockScroll();
+    } else {
+      allowScroll();
+    }
+
     const body = document.querySelector("body");
 
     const handler = (e) => {
@@ -32,8 +42,6 @@ export const Navigation = () => {
     return () => {
       body && body.removeEventListener("click", handler);
     };
-
-
   });
 
   return (
@@ -63,33 +71,6 @@ export const Navigation = () => {
               <a href="./pages/contacts-page.html">Contacts</a>
             </li>
           </ul>
-
-          {/*                <div className="intouch-block intouch-block--mobile">
-                        <a href="https://github.com/Fenix4088?tab=repositories" target="_blank">
-                            <FontAwesomeIcon icon={faGithub} size={"3x"} className={"fa-github"}/>
-                        </a>
-
-                        <a href="#">
-                            <FontAwesomeIcon icon={faTelegram} size={"3x"} className={"fa-telegram"}/>
-                        </a>
-
-                        <a href="https://www.facebook.com/profile.php?id=100013553615468" target="_blank">
-                            <FontAwesomeIcon icon={faFacebook} size={"3x"} className={"fa-facebook"}/>
-                        </a>
-
-                        <a href="https://www.linkedin.com/in/yehor-pliasov-5776981a2/" target="_blank">
-                            <FontAwesomeIcon icon={faLinkedin} size={"3x"} className={"fa-linkedin-in"}/>
-                        </a>
-                    </div>*/}
-
-          {/*<div className="header__navigation-language header__navigation-language--mobile">*/}
-          {/*    <a href="./indexRU.html">*/}
-          {/*        <img src={ruFlag} alt="Russian flag"/>*/}
-          {/*    </a>*/}
-          {/*    <a href="./index.html">*/}
-          {/*        <img src={gbFlag} alt="England flag"/>*/}
-          {/*    </a>*/}
-          {/*</div>*/}
 
           <div className="header__naviation-email mobile-email">
             <a href="mailto:fenix4088@gmail.com">fenix4088@gmail.com</a>
