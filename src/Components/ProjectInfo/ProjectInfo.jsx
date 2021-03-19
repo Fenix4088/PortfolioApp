@@ -7,7 +7,6 @@ import { ContactsData } from "./ContactsData/ContactsData";
 
 const ProjectInfo = (props) => {
   const projectsData = useContext(ProjectsDataContext);
-    console.log(props.match.params)
 
     const { pathname } = useLocation();
 
