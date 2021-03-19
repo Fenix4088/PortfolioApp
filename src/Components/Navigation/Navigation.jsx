@@ -10,11 +10,9 @@ import {
   faLinkedinIn,
 } from "@fortawesome/free-brands-svg-icons";
 
-export const Navigation = () => {
+export const Navigation = ({menuStatus, setMenuStatus, ...props}) => {
   const [blockScroll, allowScroll] = useScrollBlock();
-
   const { ref, width = 1, height = 1 } = useResizeObserver();
-  const [menuStatus, setMenuStatus] = useState(false);
 
   const toggleMenu = () => setMenuStatus(!menuStatus);
 
@@ -46,6 +44,7 @@ export const Navigation = () => {
 
   return (
     <div className="fixed-wrapper nav-fixed" ref={ref}>
+
       <nav className="header__navigation">
         <div className="header__navigation-logo">
           <span className="title-line">

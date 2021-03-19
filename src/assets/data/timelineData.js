@@ -54,7 +54,7 @@ export const timelineData = [
   {
     title: "React/Redux course",
     desc: "React, Redux(react-redux, redux-thunk), TypeScript, JavaScript, MaterialUI, Unit-test",
-    dates: "December 2020 – current",
+    dates: "December 2020",
     icon: {
       icon: faReact,
       class: "fab fa-react",

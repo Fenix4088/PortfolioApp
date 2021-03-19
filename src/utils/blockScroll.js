@@ -12,6 +12,7 @@ export default () => {
     const { body } = safeDocument;
 
     const blockScroll = () => {
+        // debugger;
         if (!body || !body.style || scrollBlocked.current) return;
 
         const scrollBarWidth = window.innerWidth - html.clientWidth;
@@ -25,7 +26,7 @@ export default () => {
          *    scroll if an `overflow-x` style is also applied to the body.
          */
         html.style.position = 'relative'; /* [1] */
-        html.style.overflow = 'hidden'; /* [2] */
+        // html.style.overflow = 'hidden'; /* [2] */
         body.style.position = 'relative'; /* [1] */
         body.style.overflow = 'hidden'; /* [2] */
         body.style.paddingRight = `${bodyPaddingRight + scrollBarWidth}px`;
