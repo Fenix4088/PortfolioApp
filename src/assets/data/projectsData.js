@@ -10,6 +10,10 @@ import squareMeterS from "../img/projects-screenshots/square-project-small.jpg";
 import squareMeterL from "../img/projects-screenshots/square-project.jpg";
 import budgetCalcS from "../img/projects-screenshots/budget-calculator-small.jpg";
 import budgetCalcL from "../img/projects-screenshots/budget-calculator.jpg";
+import currencyConverterS from "../img/projects-screenshots/currencyConverter-small.jpg"
+import currencyConverterL from "../img/projects-screenshots/currencyConverter.jpg"
+import todoReactS from "../img/projects-screenshots/todoReact-small.jpg"
+import todoReactL from "../img/projects-screenshots/todoReact.jpg"
 
 
 export const projectsData = {
@@ -139,6 +143,52 @@ export const projectsData = {
     images: {
       small: squareMeterS,
       big: squareMeterL,
+    },
+  },
+  currencyConverter: {
+    id: "currencyConverter",
+    linkTitle: 'Currency converter',
+    title: "Currency converter",
+    type: "Frontend application",
+    label: "react",
+    mainTech: ["html", "css", "javascript", "react", "redux"],
+    links: {
+      demo: "https://fenix4088.github.io/CurrencyConverter/",
+      git: "https://github.com/Fenix4088/CurrencyConverter",
+    },
+    desc:
+        "Currency converter. Simple React application. My home project",
+    project: 'Single page application',
+    allTech: ["HTML", "CSS", "JS", "React", "Redux"],
+    features:
+        "Currency converter can to convert three currency, RUB, EU, US",
+    images: {
+      small: currencyConverterS,
+      big: currencyConverterL,
+    },
+  },
+  todoReact: {
+    id: "todoReact",
+    linkTitle: 'Todo application',
+    title: "Todo application",
+    type: "Frontend application",
+    label: "react",
+    mainTech: ["html", "css", "javascript", "react", "redux", "axios", "storybook", "jest"],
+    links: {
+      demo: "https://fenix4088.github.io/ToDO-app-React-TS-/",
+      git: "https://github.com/Fenix4088/ToDO-app-React-TS-",
+    },
+    desc:
+        "Todolist application works with server. This is nice application for people ho what get their tasks in order",
+    project: 'Single page application',
+    allTech: ["HTML", "CSS", "JS", "React", "Redux", "Axios", "Redux-thunk", "Storybook", "Jest-tests"],
+    features:
+        "REST API, FLUX architecture, UNIT-tests, an app give an ability to tests most part of components in Storybook" +
+        " component UI development tool, used React best practices, separation between BLL, DAL and UI ",
+
+    images: {
+      small: todoReactS,
+      big: todoReactL,
     },
   },
 };

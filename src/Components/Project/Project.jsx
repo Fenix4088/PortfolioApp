@@ -6,7 +6,7 @@ export const Project = (props) => {
   const { linkTitle, images, title, type, id } = props.data;
 
   return (
-    <div className="portfolio__card">
+    <div className={`portfolio__card ${props.animation}`}>
       <div className="portfolio__project-img">
         <img src={images.small} alt={title} />
         <NavLink to={`/projectPage/${id}`} className="portfolio__project-btn">

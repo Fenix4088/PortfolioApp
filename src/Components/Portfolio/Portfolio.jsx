@@ -18,8 +18,16 @@ export const Portfolio = () => {
     projectsDataKeys
   );
   const [isActive, setIsActive] = useState(0);
+  const [isAnimate, setIsAnimate] = useState(false);
 
   const onProjectMenuClick = (e, index) => {
+
+    setIsAnimate(true);
+
+    setTimeout(() => {
+      setIsAnimate(false);
+    }, 1000)
+
     setIsActive(index);
     const { project } = e.currentTarget.dataset;
     let sortedData = { ...projectsData };
@@ -32,9 +40,11 @@ export const Portfolio = () => {
       }
       projectsDataKeys = Object.keys(sortedData);
     } else {
-      projectsDataKeys = Object.keys(projectsData);
+      projectsDataKeys = Object.keys(projectsData).reverse();
     }
     setCurrentProjectsKeys(projectsDataKeys);
+
+
   };
 
   return (
@@ -63,7 +73,7 @@ export const Portfolio = () => {
           id="portfolio-project-filter"
         >
           {currentProjectsKeys.reverse().map((p, i) => (
-            <Project key={i} data={projectsData[p]} />
+            <Project key={i} data={projectsData[p]} animation={isAnimate ? "portfolio__card--animation" : ""} />
           ))}
         </div>
         <div className="portfolio__toggles-link">
