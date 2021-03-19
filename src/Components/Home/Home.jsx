@@ -3,6 +3,7 @@ import { Header } from "../Header/Header";
 import { Main } from "../Main/Main";
 import { Portfolio } from "../Portfolio/Portfolio";
 import { Timeline } from "../Timeline/Timeline";
+import {Contacts} from "../Contacts/Contacts";
 
 export const Home = () => {
   return (
@@ -11,6 +12,7 @@ export const Home = () => {
       <Main>
         <Portfolio />
         <Timeline />
+        <Contacts/>
       </Main>
     </>
   );

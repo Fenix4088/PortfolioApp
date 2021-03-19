@@ -16,7 +16,8 @@ function App() {
 
   return (
     <div ref={ref}>
-      <div className={`${menuStatus ? "overlay" : ""}`}></div>
+      <Overlay menuStatus={menuStatus} />
+
       <Navigation menuStatus={menuStatus} setMenuStatus={setMenuStatus} />
       <Switch>
         <Route exact path="/" render={() => <Home />} />
@@ -29,5 +30,9 @@ function App() {
     </div>
   );
 }
+
+export const Overlay = ({ menuStatus, ...props }) => {
+  return <div className={`${menuStatus ? "overlay" : ""}`}></div>;
+};
 
 export default App;

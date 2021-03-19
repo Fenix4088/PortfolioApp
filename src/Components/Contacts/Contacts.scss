@@ -1,0 +1,251 @@
+@import "../../Styles/Mixins";
+@import "../../Styles/Variables";
+
+
+.contacts {
+  padding: 60px 0;
+  margin: 0 auto;
+  background-color: $background-grey;
+  background-position: center;
+  background-size: auto;
+  background-repeat: repeat;
+
+  @media (min-width: 768px) {
+    padding: 85px 0;
+  }
+
+  @media (min-width: 1200px) {
+    padding: 145px 0;
+    //background-image: url(../img/backgrounds/bg-contacts-lines-4.jpg);
+    background-position: center;
+    background-size: auto;
+    background-repeat: repeat;
+  }
+}
+
+.contacts__title {
+  margin-bottom: 50px;
+  @include title-big;
+  text-align: center;
+  & span::before {
+    bottom: 9px;
+
+  }
+
+  @media (min-width: 768px) {
+    margin-bottom: 73px;
+  }
+
+}
+
+.contacts__wrapper {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+
+  @media (min-width: 768px) {
+    flex-flow: row nowrap;
+  }
+
+}
+
+.contacts__contact-details {
+  padding-top: 15px;
+  padding-bottom: 50px;
+  position: relative;
+  z-index: 2;
+  p {
+    margin-bottom: 45px;
+    font-size: 16px;
+    line-height: 1.6;
+    font-weight: 400;
+
+    @media (min-width: 768px) {
+      font-size: 18px;
+    }
+
+    @media (min-width: 1200px) {
+      font-size: 20px;
+    }
+
+  }
+
+  @media (min-width: 768px) {
+    padding-bottom: 0;
+    width: 43.8%;
+  }
+}
+
+.contacts__contact-details-img {
+  display: none;
+  position: absolute;
+  top: -16px;
+  left: -354px;
+  user-select: none;
+  z-index: -1;
+
+  @media (min-width: 1200px) {
+    display: block;
+  }
+}
+
+.contacts__contact-wrapper {
+  margin-bottom: 40px;
+  font-size: 18px;
+
+  @media (min-width: 1200px) {
+    font-size: 20px;
+  }
+}
+
+.contacts__contact-list {
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+.contacts__contact-list li {
+  margin-bottom: 27px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+}
+
+.contacts__contact-type {
+  min-width: 100%;
+  display: inline-block;
+
+  @media (min-width: 1200px) {
+    margin-bottom: 0;
+    margin-right: 20%;
+    min-width: 100px;
+
+  }
+
+}
+
+.contacts__contact-data {
+  display: inline-block;
+  line-height: 1.2;
+}
+
+.contacts__contact-data  > a {
+  color: rgb(3, 155, 229);
+  transition: all .2s ease-in;
+  &:hover {
+    color: rgb(22, 92, 128);
+  }
+}
+
+.contacts__contact-data {
+  font-weight: 500;
+  color: rgb(150, 150, 157);
+}
+
+.phone {
+  color: rgb(150, 150, 157) !important;
+  &:hover {
+    color: rgb(22, 92, 128) !important;
+  }
+}
+
+.contacts__contact-icons {
+  max-width: 295px;
+}
+
+.contacts__form {
+  padding: 55px 12px 40px;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 590px;
+  max-height: 515px;
+  font-size: 20px;
+  box-shadow: 0px 28px 100px 0px rgba(194, 219, 235, 1);
+  background-color: #fff;
+
+  @media (min-width: 768px) {
+    padding: 55px 25px 0px;
+    margin: 0;
+    max-width: unset;
+    max-height: unset;
+    width: 45%;
+  }
+
+  @media (min-width: 1200px) {
+    padding: 55px 60px 40px;
+
+  }
+}
+
+.contacts__form-inputs-wrapper {
+  margin-bottom: 40px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+}
+
+.contacts__form-item {
+  margin-bottom: 40px;
+  display: inline-block;
+  position: relative;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @media (min-width: 1200px) {
+    margin-bottom: 60px;
+  }
+}
+
+.contacts__form-input {
+  width: 100%;
+  height: 48px;
+  font-size: 20px;
+  font-weight: bold;
+  border: none;
+  border-bottom: 1px solid #cecece;
+  color: #000;
+  &:focus {
+    border-bottom: 1px solid $red-main;
+  }
+}
+
+
+.contacts__form-placeholder {
+  position: absolute;
+  top: 0;
+  left: 5px;
+  color: rgb(188, 188, 188);
+  font-weight: bold;
+  transition: all, .2s ease-in;
+  pointer-events: none;
+
+}
+
+.contacts__form-placeholder.active {
+  font-size: 16px;
+  color: rgb(237, 150, 38);
+  top: -20px;
+}
+
+.contacts__form-input--textarea {
+  height: 120px;
+}
+
+
+.contacts__form-btn {
+  width: 100%;
+  height: unset !important;
+  @include color-btn;
+  border: none;
+  @media (min-width: 768px) {
+
+  }
+
+  @media (min-width: 1200px) {
+    width: unset;
+  }
+}
+
