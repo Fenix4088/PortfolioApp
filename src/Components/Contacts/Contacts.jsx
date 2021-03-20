@@ -59,52 +59,11 @@ export const Contacts = (props) => {
             />
           </div>
 
-          <form
-            className="contacts__form"
-            action="#"
-            method="get"
-            id="contact-form"
-          >
-            <div className="contacts__form-inputs-wrapper">
-              <div className="contacts__form-item">
-                <input
-                  type="email"
-                  name="email"
-                  className="contacts__form-input"
-                  required
-                />
-                <span className="contacts__form-placeholder">Your email</span>
-              </div>
-
-              <div className="contacts__form-item">
-                <input
-                  type="text"
-                  name="theme"
-                  className="contacts__form-input"
-                  required
-                />
-                <span className="contacts__form-placeholder">
-                  Message Theme
-                </span>
-              </div>
-
-              <div className="contacts__form-item">
-                <textarea
-                  className="contacts__form-input contacts__form-input--textarea"
-                  name="message"
-                ></textarea>
-                <span className="contacts__form-placeholder">Message</span>
-              </div>
-            </div>
-
-            <button type="submit" className="contacts__form-btn">
-              Send
-            </button>
-          </form>
+          <ContactUs/>
+          
         </div>
       </div>
 
-      <ContactUs/>
     </section>
   );
 };
