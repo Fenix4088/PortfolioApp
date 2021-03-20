@@ -32,7 +32,7 @@ function App() {
 }
 
 export const Overlay = ({ menuStatus, ...props }) => {
-  return <div className={`${menuStatus ? "overlay" : ""}`}></div>;
+  return <div className={`${menuStatus ? "overlay" : ""}`}> </div>;
 };
 
 export default App;
