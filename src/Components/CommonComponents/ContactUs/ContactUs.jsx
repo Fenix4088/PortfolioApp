@@ -1,14 +1,15 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import emailjs from "emailjs-com";
-import {Preloader} from "../Preloader/Preloader";
+import { Preloader } from "../Preloader/Preloader";
 
 export function ContactUs() {
+    console.log("ContactUs")
   const [isSending, setIsSending] = useState(false);
 
-
+    console.log(inputOnFocus)
   function sendEmail(e) {
     e.preventDefault();
-
+    setIsSending(true);
     emailjs
       .sendForm(
         "service_2wk4yc9",
@@ -18,21 +19,30 @@ export function ContactUs() {
       )
       .then(
         (result) => {
+          setIsSending(false);
           console.log(result.text);
         },
         (error) => {
+          setIsSending(false);
           console.log(error.text);
         }
       );
   }
 
+  const onFocusHandler = (e) => {
+      const {name} = e.currentTarget;
+  }
+
   return (
     <form className="contacts__form" onSubmit={sendEmail}>
-      <Preloader/>
+      {isSending && <Preloader />}
+      {isSending && <div className={"form-overlay"}></div>}
       <input type="hidden" name="contact_number" />
       <div className="contacts__form-inputs-wrapper">
         <div className="contacts__form-item">
           <input
+            disabled={isSending}
+            onFocus={onFocusHandler}
             type="text"
             name="user_name"
             className="contacts__form-input"
@@ -43,6 +53,8 @@ export function ContactUs() {
 
         <div className="contacts__form-item">
           <input
+            disabled={isSending}
+            onFocus={onFocusHandler}
             type="email"
             name="user_email"
             className="contacts__form-input"
@@ -53,6 +65,8 @@ export function ContactUs() {
 
         <div className="contacts__form-item">
           <textarea
+            disabled={isSending}
+            onFocus={onFocusHandler}
             className="contacts__form-input contacts__form-input--textarea"
             name="message"
           />
@@ -60,10 +74,14 @@ export function ContactUs() {
         </div>
       </div>
 
-      <button type="submit" className="contacts__form-btn" value="Send">
+      <button
+        disabled={isSending}
+        type="submit"
+        className="contacts__form-btn"
+        value="Send"
+      >
         Send
       </button>
     </form>
   );
 }
-

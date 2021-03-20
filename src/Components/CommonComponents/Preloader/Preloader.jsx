@@ -9,7 +9,7 @@ export function Preloader() {
 
   const { containerProps, indicatorEl } = useLoading({
     loading: true,
-    indicator: <Bars width="50" />,
+    indicator: <Bars width="80" />,
   });
 
   return <div {...containerProps} className={"preloader"}>{indicatorEl}</div>;
