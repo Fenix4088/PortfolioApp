@@ -3,7 +3,7 @@ import "./Contacts.scss";
 import contactBg from "../../assets/img/backgrounds/contacts-lines-grey-bg.jpg";
 import dotsImg from "../../assets/img/contacts/dots.png";
 import { Intouch } from "../CommonComponents/IntouchBlock/Intouch";
-import { ContactUs } from "../../utils/contactUs";
+import { ContactUs } from "../CommonComponents/ContactUs/ContactUs";
 
 export const Contacts = (props) => {
   return (
@@ -60,7 +60,7 @@ export const Contacts = (props) => {
           </div>
 
           <ContactUs/>
-          
+
         </div>
       </div>
 

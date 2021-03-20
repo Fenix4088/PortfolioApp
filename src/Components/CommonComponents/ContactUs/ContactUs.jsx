@@ -1,7 +1,11 @@
-import React from "react";
+import React, {useState} from "react";
 import emailjs from "emailjs-com";
+import {Preloader} from "../Preloader/Preloader";
 
 export function ContactUs() {
+  const [isSending, setIsSending] = useState(false);
+
+
   function sendEmail(e) {
     e.preventDefault();
 
@@ -24,6 +28,7 @@ export function ContactUs() {
 
   return (
     <form className="contacts__form" onSubmit={sendEmail}>
+      <Preloader/>
       <input type="hidden" name="contact_number" />
       <div className="contacts__form-inputs-wrapper">
         <div className="contacts__form-item">
@@ -62,16 +67,3 @@ export function ContactUs() {
   );
 }
 
-// <form className="contact-form" onSubmit={sendEmail}>
-//     <input type="hidden" name="contact_number" />
-//     <label>Name</label>
-//     <input type="text" name="user_name" />
-//     <label>Email</label>
-//     <input type="email" name="user_email" />
-//     <label>Message</label>
-//     <textarea name="message" />
-//     <input type="submit" value="Send" />
-// </form>
-
-/*
- */
