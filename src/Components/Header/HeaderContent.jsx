@@ -9,7 +9,7 @@ export const HeaderContent = (props) => {
       <div className="header__content-wrapper">
         <div className="header__content-description">
           <h1 className="header__title">
-            <span className="title-line-big">Yehor1</span>
+            <span className="title-line-big">Yehor5</span>
             <br />
             <span className="title-line-big"> Pliasov</span>
           </h1>

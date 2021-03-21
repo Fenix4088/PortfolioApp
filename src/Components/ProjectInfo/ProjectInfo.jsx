@@ -1,4 +1,4 @@
-import React, {useContext, useEffect} from "react";
+import React, { useContext, useEffect } from "react";
 import { withRouter, useLocation } from "react-router-dom";
 import { ProjectsDataContext } from "../../index";
 import { ProjectHeader } from "./ProjectHeader/ProjectHeader";
@@ -7,16 +7,18 @@ import { ContactsData } from "./ContactsData/ContactsData";
 
 const ProjectInfo = (props) => {
   const projectsData = useContext(ProjectsDataContext);
+  const currentProjectName = props.match.params.projectName;
+  const currentProject = projectsData.filter(
+    (p) => p.id === currentProjectName
+  )[0];
 
-    const { pathname } = useLocation();
+  const { pathname } = useLocation();
 
-    useEffect(() => {
-        window.scrollTo(0, 0);
-    }, [pathname]);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
 
-  const currentProjectData = projectsData[props.match.params.projectName];
-
-  const { title, mainTech, ...aboutProjectData } = currentProjectData;
+  const { title, mainTech, ...aboutProjectData } = currentProject;
   return (
     <>
       <ProjectHeader title={title} mainTech={mainTech} />

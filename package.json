@@ -20,6 +20,7 @@
     "react-scripts": "4.0.2",
     "react-toastify": "^7.0.3",
     "use-resize-observer": "^7.0.0",
+    "uuid": "^8.3.2",
     "web-vitals": "^1.0.1"
   },
   "homepage": "https://fenix4088.github.io/PortfolioApp",

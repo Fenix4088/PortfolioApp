@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import "./Portfolio.scss";
 import { Project } from "../Project/Project";
 import { ProjectsDataContext } from "../../index";
+import { v1 } from "uuid";
 
 const menuItemList = [
   { title: "All projects", mark: "all" },
@@ -12,39 +13,32 @@ const menuItemList = [
 
 export const Portfolio = () => {
   const projectsData = useContext(ProjectsDataContext);
-  let projectsDataKeys = Object.keys(projectsData);
 
-  const [currentProjectsKeys, setCurrentProjectsKeys] = useState(
-    projectsDataKeys
-  );
+  const [currentProjects, setCurrentProjects] = useState(projectsData);
+
   const [isActive, setIsActive] = useState(0);
   const [isAnimate, setIsAnimate] = useState(false);
 
   const onProjectMenuClick = (e, index) => {
-
     setIsAnimate(true);
 
     setTimeout(() => {
       setIsAnimate(false);
-    }, 1000)
+    }, 1000);
 
     setIsActive(index);
+
+    let filteredProjectData = [...projectsData];
     const { project } = e.currentTarget.dataset;
-    let sortedData = { ...projectsData };
 
     if (project !== "all") {
-      for (const [key, value] of Object.entries(sortedData)) {
-        if (sortedData[key].label !== project) {
-          delete sortedData[key];
-        }
-      }
-      projectsDataKeys = Object.keys(sortedData);
+      filteredProjectData = filteredProjectData.filter(
+        (p) => p.label === project
+      );
+      setCurrentProjects(filteredProjectData);
     } else {
-      projectsDataKeys = Object.keys(projectsData).reverse();
+      setCurrentProjects(filteredProjectData);
     }
-    setCurrentProjectsKeys(projectsDataKeys);
-
-
   };
 
   return (
@@ -72,15 +66,15 @@ export const Portfolio = () => {
           className="portfolio__projects-wrapper"
           id="portfolio-project-filter"
         >
-          {currentProjectsKeys.reverse().map((p, i) => (
-            <Project key={i} data={projectsData[p]} animation={isAnimate ? "portfolio__card--animation" : ""} />
+          {currentProjects.map((p, i) => (
+            <Project
+              key={p.id}
+              data={p}
+              animation={isAnimate ? "portfolio__card--animation" : ""}
+            />
           ))}
         </div>
-        <div className="portfolio__toggles-link">
-          <a href="./pages/projects-page.html">View all projects</a>
-        </div>
       </div>
-
     </section>
   );
 };
