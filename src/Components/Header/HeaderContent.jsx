@@ -27,8 +27,8 @@ export const HeaderContent = (props) => {
               additionalClass={"header__btn"}
             />
             <PortfolioBTN
-              path={"./pages/contacts-page.html"}
-              linkType={"nav"}
+              path={"#contacts"}
+              linkType={"hash"}
               theme={"colorless"}
               title={"Contacts"}
               additionalClass={"header__btn"}

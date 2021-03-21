@@ -10,6 +10,8 @@ import {
   faLinkedinIn,
 } from "@fortawesome/free-brands-svg-icons";
 import {Intouch} from "../CommonComponents/IntouchBlock/Intouch";
+import {NavLink} from "react-router-dom";
+import {HashLink, NavHashLink} from "react-router-hash-link";
 
 export const Navigation = ({menuStatus, setMenuStatus, ...props}) => {
   const [blockScroll, allowScroll] = useScrollBlock();
@@ -49,7 +51,7 @@ export const Navigation = ({menuStatus, setMenuStatus, ...props}) => {
       <nav className="header__navigation">
         <div className="header__navigation-logo">
           <span className="title-line">
-            <a href="./index.html">YP</a>
+            <NavLink to="/">YP</NavLink>
           </span>
         </div>
 
@@ -60,15 +62,15 @@ export const Navigation = ({menuStatus, setMenuStatus, ...props}) => {
         >
           <ul className="header__navigation-list">
             <li className="header__navigation-list-item">
-              <a href="#" className="active-page">
+              <NavLink to="/" className="active-page">
                 Main
-              </a>
+              </NavLink>
             </li>
             <li className="header__navigation-list-item">
-              <a href="./pages/projects-page.html">Projects</a>
+              <HashLink to="#projects">Projects</HashLink>
             </li>
             <li className="header__navigation-list-item">
-              <a href="./pages/contacts-page.html">Contacts</a>
+              <HashLink to="#contacts">Contacts</HashLink>
             </li>
           </ul>
 

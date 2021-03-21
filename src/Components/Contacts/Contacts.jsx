@@ -10,6 +10,7 @@ export const Contacts = (props) => {
     <section
       className="contacts"
       style={{ backgroundImage: `url(${contactBg})` }}
+      id={"contacts"}
     >
       <div className="container">
         <h2 className="contacts__title contacts__title">

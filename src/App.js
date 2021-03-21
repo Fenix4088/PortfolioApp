@@ -5,6 +5,7 @@ import { Home } from "./Components/Home/Home";
 import { Switch, Route } from "react-router-dom";
 import { ProjectInfoContainer } from "./Components/ProjectInfo/ProjectInfo";
 import useResizeObserver from "use-resize-observer";
+import {Footer} from "./Components/Footer/Footer";
 
 function App() {
   const [menuStatus, setMenuStatus] = useState(false);
@@ -27,6 +28,7 @@ function App() {
           render={() => <ProjectInfoContainer />}
         />
       </Switch>
+        <Footer/>
     </div>
   );
 }
