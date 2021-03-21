@@ -1,21 +1,38 @@
 import React, { useState } from "react";
 import emailjs from "emailjs-com";
 import { Preloader } from "../Preloader/Preloader";
+import { Notification } from "../Notification/Notification";
+import { toast } from "react-toastify";
 
 export function ContactUs() {
   const [isSending, setIsSending] = useState(false);
 
-    const [nameInpVal, setNameInputValue] = useState("");
-    const [emailInpVal, setEmailInpVal] = useState("");
-    const [messageInpVal, setMessageInpVal] = useState("");
+  const [nameInpVal, setNameInputValue] = useState("");
+  const [emailInpVal, setEmailInpVal] = useState("");
+  const [messageInpVal, setMessageInpVal] = useState("");
 
-    const nameInpChange = (curVal) => setNameInputValue(curVal);
-    const emailInpChange = (curVal) => setEmailInpVal(curVal);
-    const messageInpChange = (curVal) => setMessageInpVal(curVal);
+  const nameInpChange = (curVal) => setNameInputValue(curVal);
+  const emailInpChange = (curVal) => setEmailInpVal(curVal);
+  const messageInpChange = (curVal) => setMessageInpVal(curVal);
+
+  const messageSendCallback = (messageText, status) => {
+
+    const toastPosition = {
+      position: toast.POSITION.BOTTOM_CENTER
+    }
+
+    if(status) {
+      toast.success(messageText, toastPosition);
+    } else {
+      toast.error(messageText, toastPosition);
+
+    }
+  }
 
   function sendEmail(e) {
     e.preventDefault();
     setIsSending(true);
+
     emailjs
       .sendForm(
         "service_2wk4yc9",
@@ -24,29 +41,47 @@ export function ContactUs() {
         "user_LF091J7HzI7ijp7ACG5T1"
       )
       .then(
-        (result) => {
+        () => {
+          messageSendCallback("Message sent!", true);
           setIsSending(false);
-            nameInpChange("")
-            emailInpChange("")
-            messageInpChange("")
-          console.log(result.text);
+          nameInpChange("");
+          emailInpChange("");
+          messageInpChange("");
         },
-        (error) => {
+        () => {
+          messageSendCallback("This message wasn't send!", false);
           setIsSending(false);
-
-          console.log(error.text);
         }
       );
   }
 
   const formInputData = [
-    { inputType: "input", name: "user_name", placeholder: "Name", value: nameInpVal, onInputChange:  nameInpChange},
-    { inputType: "input", name: "user_email", placeholder: "Your email", value: emailInpVal, onInputChange: emailInpChange },
-    { inputType: "textarea", name: "message", placeholder: "Message", value: messageInpVal, onInputChange:  messageInpChange},
+    {
+      inputType: "input",
+      name: "user_name",
+      placeholder: "Name",
+      value: nameInpVal,
+      onInputChange: nameInpChange,
+    },
+    {
+      inputType: "input",
+      name: "user_email",
+      placeholder: "Your email",
+      value: emailInpVal,
+      onInputChange: emailInpChange,
+    },
+    {
+      inputType: "textarea",
+      name: "message",
+      placeholder: "Message",
+      value: messageInpVal,
+      onInputChange: messageInpChange,
+    },
   ];
 
   return (
     <form className="contacts__form" onSubmit={sendEmail}>
+      <Notification />
       {isSending && <Preloader />}
       {isSending && <div className={"form-overlay"}></div>}
       <input type="hidden" name="contact_number" />
@@ -76,9 +111,15 @@ export function ContactUs() {
   );
 }
 
-export const FormInput = ({ inputType, disabled, placeholder, name, value, onInputChange }) => {
+export const FormInput = ({
+  inputType,
+  disabled,
+  placeholder,
+  name,
+  value,
+  onInputChange,
+}) => {
   const [isActive, setIsActive] = useState(false);
-
 
   const activePlaceholderStyles = {
     fontSize: "16px",
