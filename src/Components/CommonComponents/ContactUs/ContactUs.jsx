@@ -5,6 +5,14 @@ import { Preloader } from "../Preloader/Preloader";
 export function ContactUs() {
   const [isSending, setIsSending] = useState(false);
 
+    const [nameInpVal, setNameInputValue] = useState("");
+    const [emailInpVal, setEmailInpVal] = useState("");
+    const [messageInpVal, setMessageInpVal] = useState("");
+
+    const nameInpChange = (curVal) => setNameInputValue(curVal);
+    const emailInpChange = (curVal) => setEmailInpVal(curVal);
+    const messageInpChange = (curVal) => setMessageInpVal(curVal);
+
   function sendEmail(e) {
     e.preventDefault();
     setIsSending(true);
@@ -18,19 +26,23 @@ export function ContactUs() {
       .then(
         (result) => {
           setIsSending(false);
+            nameInpChange("")
+            emailInpChange("")
+            messageInpChange("")
           console.log(result.text);
         },
         (error) => {
           setIsSending(false);
+
           console.log(error.text);
         }
       );
   }
 
   const formInputData = [
-    { inputType: "input", name: "user_name", placeholder: "Name" },
-    { inputType: "input", name: "user_email", placeholder: "Your email" },
-    { inputType: "textarea", name: "message", placeholder: "Message" },
+    { inputType: "input", name: "user_name", placeholder: "Name", value: nameInpVal, onInputChange:  nameInpChange},
+    { inputType: "input", name: "user_email", placeholder: "Your email", value: emailInpVal, onInputChange: emailInpChange },
+    { inputType: "textarea", name: "message", placeholder: "Message", value: messageInpVal, onInputChange:  messageInpChange},
   ];
 
   return (
@@ -42,6 +54,8 @@ export function ContactUs() {
         {formInputData.map((item, i) => (
           <FormInput
             key={i}
+            value={item.value}
+            onInputChange={item.onInputChange}
             name={item.name}
             inputType={item.inputType}
             disabled={isSending}
@@ -62,10 +76,11 @@ export function ContactUs() {
   );
 }
 
-export const FormInput = ({ inputType, disabled, placeholder, name }) => {
+export const FormInput = ({ inputType, disabled, placeholder, name, value, onInputChange }) => {
   const [isActive, setIsActive] = useState(false);
 
-  const test = {
+
+  const activePlaceholderStyles = {
     fontSize: "16px",
     color: "rgb(237, 150, 38)",
     top: "-20px",
@@ -84,6 +99,7 @@ export const FormInput = ({ inputType, disabled, placeholder, name }) => {
       setIsActive(false);
     }
   };
+  const onChangeHandler = (e) => onInputChange(e.currentTarget.value);
 
   return (
     <div className="contacts__form-item">
@@ -91,7 +107,9 @@ export const FormInput = ({ inputType, disabled, placeholder, name }) => {
         <input
           onFocus={onFocusHandler}
           onBlur={onBlurHandler}
+          onChange={onChangeHandler}
           disabled={disabled}
+          value={value}
           type="text"
           name={name}
           className="contacts__form-input"
@@ -101,13 +119,18 @@ export const FormInput = ({ inputType, disabled, placeholder, name }) => {
         <textarea
           onFocus={onFocusHandler}
           onBlur={onBlurHandler}
+          onChange={onChangeHandler}
+          value={value}
           disabled={disabled}
           className="contacts__form-input contacts__form-input--textarea"
           name={name}
         />
       )}
 
-      <span className="contacts__form-placeholder" style={isActive ? test : {}}>
+      <span
+        className="contacts__form-placeholder"
+        style={isActive ? activePlaceholderStyles : {}}
+      >
         {placeholder}
       </span>
     </div>
