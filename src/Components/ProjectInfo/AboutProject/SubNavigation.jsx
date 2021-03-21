@@ -9,22 +9,22 @@ import {
 
 export const SubNavigation = (props) => {
   const projectsData = useContext(ProjectsDataContext);
-  const allPagesIds = Object.keys(projectsData).reverse();
+  // const allPagesIds = Object.keys(projectsData).reverse();
 
-  const getPagesDirection = (currentPage, allProjectsIds) => {
-    return allProjectsIds.reduce(
+  const getPagesDirection = (currentPage, allProjects) => {
+    return allProjects.reduce(
       (acc, currentElem, i, arr) => {
-        if (currentElem === currentPage) {
+        if (currentElem.id === currentPage) {
           if (arr[i + 1]) {
-            acc.nextPage = arr[i + 1];
+            acc.nextPage = arr[i + 1].id;
           } else {
-            acc.nextPage = arr[0];
+            acc.nextPage = arr[0].id;
           }
 
           if (arr[i - 1]) {
-            acc.prevPage = arr[i - 1];
+            acc.prevPage = arr[i - 1].id;
           } else {
-            acc.prevPage = arr[arr.length - 1];
+            acc.prevPage = arr[arr.length - 1].id;
           }
         }
         return acc;
@@ -35,7 +35,7 @@ export const SubNavigation = (props) => {
 
   const { prevPage, nextPage } = getPagesDirection(
     props.currentPage,
-    allPagesIds
+      projectsData
   );
 
   return (

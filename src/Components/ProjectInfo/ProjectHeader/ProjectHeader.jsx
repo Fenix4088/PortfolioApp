@@ -11,9 +11,10 @@ export const ProjectHeader = (props) => {
         </h2>
 
         <div className="project-info__technology">
-          {mainTech.map((t) => {
+          {mainTech.map((t, i) => {
             return (
               <div
+                  key={i}
                 className={`project-info__technology-item project-info__technology-item--${t}`}
               >
                 {t}
