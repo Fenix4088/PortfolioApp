@@ -13,7 +13,7 @@ function App() {
 
   useEffect(() => {
     if (width >= 991) setMenuStatus(false);
-  });
+  }, [width]);
 
   return (
     <div ref={ref}>

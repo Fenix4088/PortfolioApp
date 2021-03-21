@@ -43,7 +43,7 @@ export const Navigation = ({menuStatus, setMenuStatus, ...props}) => {
     return () => {
       body && body.removeEventListener("click", handler);
     };
-  });
+  }, [menuStatus]);
 
   return (
     <div className="fixed-wrapper nav-fixed" ref={ref}>
