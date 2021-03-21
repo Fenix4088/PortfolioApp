@@ -3,10 +3,8 @@ import emailjs from "emailjs-com";
 import { Preloader } from "../Preloader/Preloader";
 
 export function ContactUs() {
-    console.log("ContactUs")
   const [isSending, setIsSending] = useState(false);
 
-    console.log(inputOnFocus)
   function sendEmail(e) {
     e.preventDefault();
     setIsSending(true);
@@ -29,9 +27,11 @@ export function ContactUs() {
       );
   }
 
-  const onFocusHandler = (e) => {
-      const {name} = e.currentTarget;
-  }
+  const formInputData = [
+    { inputType: "input", name: "user_name", placeholder: "Name" },
+    { inputType: "input", name: "user_email", placeholder: "Your email" },
+    { inputType: "textarea", name: "message", placeholder: "Message" },
+  ];
 
   return (
     <form className="contacts__form" onSubmit={sendEmail}>
@@ -39,39 +39,15 @@ export function ContactUs() {
       {isSending && <div className={"form-overlay"}></div>}
       <input type="hidden" name="contact_number" />
       <div className="contacts__form-inputs-wrapper">
-        <div className="contacts__form-item">
-          <input
+        {formInputData.map((item, i) => (
+          <FormInput
+            key={i}
+            name={item.name}
+            inputType={item.inputType}
             disabled={isSending}
-            onFocus={onFocusHandler}
-            type="text"
-            name="user_name"
-            className="contacts__form-input"
-            required
+            placeholder={item.placeholder}
           />
-          <span className="contacts__form-placeholder">Name</span>
-        </div>
-
-        <div className="contacts__form-item">
-          <input
-            disabled={isSending}
-            onFocus={onFocusHandler}
-            type="email"
-            name="user_email"
-            className="contacts__form-input"
-            required
-          />
-          <span className="contacts__form-placeholder">Your email</span>
-        </div>
-
-        <div className="contacts__form-item">
-          <textarea
-            disabled={isSending}
-            onFocus={onFocusHandler}
-            className="contacts__form-input contacts__form-input--textarea"
-            name="message"
-          />
-          <span className="contacts__form-placeholder">Message</span>
-        </div>
+        ))}
       </div>
 
       <button
@@ -85,3 +61,55 @@ export function ContactUs() {
     </form>
   );
 }
+
+export const FormInput = ({ inputType, disabled, placeholder, name }) => {
+  const [isActive, setIsActive] = useState(false);
+
+  const test = {
+    fontSize: "16px",
+    color: "rgb(237, 150, 38)",
+    top: "-20px",
+  };
+
+  const onFocusHandler = (e) => {
+    setIsActive(true);
+  };
+
+  const onBlurHandler = (e) => {
+    const { value } = e.currentTarget;
+
+    if (value.trim()) {
+      setIsActive(true);
+    } else {
+      setIsActive(false);
+    }
+  };
+
+  return (
+    <div className="contacts__form-item">
+      {inputType === "input" ? (
+        <input
+          onFocus={onFocusHandler}
+          onBlur={onBlurHandler}
+          disabled={disabled}
+          type="text"
+          name={name}
+          className="contacts__form-input"
+          required
+        />
+      ) : (
+        <textarea
+          onFocus={onFocusHandler}
+          onBlur={onBlurHandler}
+          disabled={disabled}
+          className="contacts__form-input contacts__form-input--textarea"
+          name={name}
+        />
+      )}
+
+      <span className="contacts__form-placeholder" style={isActive ? test : {}}>
+        {placeholder}
+      </span>
+    </div>
+  );
+};
