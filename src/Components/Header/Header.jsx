@@ -10,7 +10,7 @@ export const Header = () => {
     <header className="header" id="header" style={{backgroundImage: `url(${line})`}}>
         <HeaderContent/>
         <div className="header__image">
-            <img src={headerBg} alt="Computer image"/>
+            <img src={headerBg} alt="Computer"/>
         </div>
         <MySkills id="aboutMe"/>
     </header>

@@ -3,9 +3,6 @@ import { useLoading, Bars } from "@agney/react-loading";
 import "./Preloader.scss"
 
 export function Preloader() {
-  const barStyle = {
-    background: "red"
-  }
 
   const { containerProps, indicatorEl } = useLoading({
     loading: true,

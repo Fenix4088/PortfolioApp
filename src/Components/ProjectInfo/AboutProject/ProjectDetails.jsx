@@ -18,7 +18,7 @@ export const ProjectDetails = (props) => {
             <li className="about-project__details-item">
               <span className="about-project__details-name">Link:</span>
               <span className="about-project__details-data about-project__details-data--link">
-                <a href={`${links.demo}`} target="_blank">
+                <a href={`${links.demo}`} target="_blank" rel="noreferrer">
                   {links.demo}
                 </a>
               </span>

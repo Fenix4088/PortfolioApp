@@ -3,10 +3,10 @@ import "./Project.scss";
 import { NavLink } from "react-router-dom";
 
 export const Project = (props) => {
-  const { linkTitle, images, title, type, id } = props.data;
+  const { linkTitle, images, title, type, id, animation } = props.data;
 
   return (
-    <div className={`portfolio__card ${props.animation}`}>
+    <div className={`portfolio__card ${animation}`}>
       <div className="portfolio__project-img">
         <img src={images.small} alt={title} />
         <NavLink to={`/projectPage/${id}`} className="portfolio__project-btn">

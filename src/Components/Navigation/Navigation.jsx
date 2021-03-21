@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect} from "react";
 import "./Navigation.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import useResizeObserver from "use-resize-observer";
@@ -11,11 +11,11 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import {Intouch} from "../CommonComponents/IntouchBlock/Intouch";
 import {NavLink} from "react-router-dom";
-import {HashLink, NavHashLink} from "react-router-hash-link";
+import {HashLink} from "react-router-hash-link";
 
-export const Navigation = ({menuStatus, setMenuStatus, ...props}) => {
+export const Navigation = ({menuStatus, setMenuStatus}) => {
   const [blockScroll, allowScroll] = useScrollBlock();
-  const { ref, width = 1, height = 1 } = useResizeObserver();
+  const { ref, width = 1} = useResizeObserver();
 
   const toggleMenu = () => setMenuStatus(!menuStatus);
 
@@ -43,7 +43,7 @@ export const Navigation = ({menuStatus, setMenuStatus, ...props}) => {
     return () => {
       body && body.removeEventListener("click", handler);
     };
-  }, [menuStatus]);
+  }, [menuStatus, blockScroll, allowScroll, setMenuStatus]);
 
   return (
     <div className="fixed-wrapper nav-fixed" ref={ref}>
@@ -88,6 +88,7 @@ export const Navigation = ({menuStatus, setMenuStatus, ...props}) => {
             <a
               href="https://www.linkedin.com/in/yehor-pliasov-5776981a2/"
               target="_blank"
+              rel="noreferrer"
             >
               <FontAwesomeIcon
                 icon={faLinkedinIn}
@@ -100,6 +101,7 @@ export const Navigation = ({menuStatus, setMenuStatus, ...props}) => {
             <a
               href="https://github.com/Fenix4088?tab=repositories"
               target="_blank"
+              rel="noreferrer"
             >
               <FontAwesomeIcon
                 icon={faGithub}
@@ -112,6 +114,7 @@ export const Navigation = ({menuStatus, setMenuStatus, ...props}) => {
             <a
               href="https://www.facebook.com/profile.php?id=100013553615468&ref=bookmarks"
               target="_blank"
+              rel="noreferrer"
             >
               <FontAwesomeIcon
                 icon={faFacebookF}
@@ -138,7 +141,7 @@ export const BurgerMenu = (props) => {
 
   return (
     <div className="header__burger-wrap" onClick={toggleMenuCallback}>
-      <span className={burgerMenuFinalStyle}></span>
+      <span className={burgerMenuFinalStyle}> </span>
     </div>
   );
 };

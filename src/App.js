@@ -9,7 +9,7 @@ import {Footer} from "./Components/Footer/Footer";
 
 function App() {
   const [menuStatus, setMenuStatus] = useState(false);
-  const { ref, width = 1, height = 1 } = useResizeObserver();
+  const { ref, width = 1 } = useResizeObserver();
 
   useEffect(() => {
     if (width >= 991) setMenuStatus(false);
@@ -33,7 +33,7 @@ function App() {
   );
 }
 
-export const Overlay = ({ menuStatus, ...props }) => {
+export const Overlay = ({ menuStatus }) => {
   return <div className={`${menuStatus ? "overlay" : ""}`}> </div>;
 };
 

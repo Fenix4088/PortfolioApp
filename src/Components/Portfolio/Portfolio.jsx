@@ -52,6 +52,7 @@ export const Portfolio = () => {
           {menuItemList.map((item, i) => {
             return (
               <MenuItem
+                  key={v1()}
                 mark={item.mark}
                 title={item.title}
                 index={i}

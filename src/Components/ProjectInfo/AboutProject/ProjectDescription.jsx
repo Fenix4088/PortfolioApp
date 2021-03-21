@@ -17,7 +17,7 @@ export const ProjectDescription = (props) => {
               <FontAwesomeIcon icon={faWindowMaximize} size={"2x"} />
             </span>
             <span className="about-project__link">
-              <a href={`${links.demo}`} target="_blank">
+              <a href={`${links.demo}`} target="_blank" rel="noreferrer">
                 View demo online
               </a>
             </span>
@@ -27,7 +27,7 @@ export const ProjectDescription = (props) => {
               <FontAwesomeIcon icon={faGithub} size={"2x"} />
             </span>
             <span className="about-project__link">
-              <a href={`${links.git}`} target="_blank">
+              <a href={`${links.git}`} target="_blank" rel="noreferrer">
                 Code on a GitHub
               </a>
             </span>

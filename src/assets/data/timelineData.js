@@ -1,4 +1,3 @@
-import React from "react";
 import {faJsSquare, faReact,} from "@fortawesome/free-brands-svg-icons";
 import {faCode, faUniversity} from "@fortawesome/free-solid-svg-icons";
 
