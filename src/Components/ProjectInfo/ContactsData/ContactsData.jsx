@@ -9,7 +9,7 @@ export const ContactsData = () => {
       <div className="container">
         <div className="contacts-data__wrapper">
           <div className="contacts-data__title">
-            If you whant to creat a WebSite:
+            If you want to create a WebSite:
           </div>
           <div className="contacts-data__link">
             send me a message&nbsp;
