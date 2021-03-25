@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/PortfolioApp/static/css/main.2bf70aeb.chunk.css",
-    "main.js": "/PortfolioApp/static/js/main.304c8a82.chunk.js",
-    "main.js.map": "/PortfolioApp/static/js/main.304c8a82.chunk.js.map",
+    "main.css": "/PortfolioApp/static/css/main.2cc87eda.chunk.css",
+    "main.js": "/PortfolioApp/static/js/main.10f313a8.chunk.js",
+    "main.js.map": "/PortfolioApp/static/js/main.10f313a8.chunk.js.map",
     "runtime-main.js": "/PortfolioApp/static/js/runtime-main.3efb244d.js",
     "runtime-main.js.map": "/PortfolioApp/static/js/runtime-main.3efb244d.js.map",
     "static/css/2.ffda3d49.chunk.css": "/PortfolioApp/static/css/2.ffda3d49.chunk.css",
@@ -12,11 +12,13 @@
     "static/js/3.dac50896.chunk.js.map": "/PortfolioApp/static/js/3.dac50896.chunk.js.map",
     "index.html": "/PortfolioApp/index.html",
     "static/css/2.ffda3d49.chunk.css.map": "/PortfolioApp/static/css/2.ffda3d49.chunk.css.map",
-    "static/css/main.2bf70aeb.chunk.css.map": "/PortfolioApp/static/css/main.2bf70aeb.chunk.css.map",
+    "static/css/main.2cc87eda.chunk.css.map": "/PortfolioApp/static/css/main.2cc87eda.chunk.css.map",
     "static/js/2.bbc678a6.chunk.js.LICENSE.txt": "/PortfolioApp/static/js/2.bbc678a6.chunk.js.LICENSE.txt",
     "static/media/PLIASOV_CV.d250cdcb.pdf": "/PortfolioApp/static/media/PLIASOV_CV.d250cdcb.pdf",
     "static/media/StayAndSki-progect-small.d076044f.jpg": "/PortfolioApp/static/media/StayAndSki-progect-small.d076044f.jpg",
     "static/media/StayAndSki-project.9e32ebd6.jpg": "/PortfolioApp/static/media/StayAndSki-project.9e32ebd6.jpg",
+    "static/media/adminPanel-small.e8e77a75.jpg": "/PortfolioApp/static/media/adminPanel-small.e8e77a75.jpg",
+    "static/media/adminPanel.a5dd9477.jpg": "/PortfolioApp/static/media/adminPanel.a5dd9477.jpg",
     "static/media/avatar.da883edd.jpg": "/PortfolioApp/static/media/avatar.da883edd.jpg",
     "static/media/budget-calculator-small.88fd314d.jpg": "/PortfolioApp/static/media/budget-calculator-small.88fd314d.jpg",
     "static/media/budget-calculator.ed6bc30c.jpg": "/PortfolioApp/static/media/budget-calculator.ed6bc30c.jpg",
@@ -39,7 +41,7 @@
     "static/js/runtime-main.3efb244d.js",
     "static/css/2.ffda3d49.chunk.css",
     "static/js/2.bbc678a6.chunk.js",
-    "static/css/main.2bf70aeb.chunk.css",
-    "static/js/main.304c8a82.chunk.js"
+    "static/css/main.2cc87eda.chunk.css",
+    "static/js/main.10f313a8.chunk.js"
   ]
 }
