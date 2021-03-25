@@ -14,6 +14,8 @@ import currencyConverterS from "../img/projects-screenshots/currencyConverter-sm
 import currencyConverterL from "../img/projects-screenshots/currencyConverter.jpg";
 import todoReactS from "../img/projects-screenshots/todoReact-small.jpg";
 import todoReactL from "../img/projects-screenshots/todoReact.jpg";
+import adminPanelS from "../img/projects-screenshots/adminPanel-small.jpg";
+import adminPanelL from "../img/projects-screenshots/adminPanel.jpg";
 
 export const projectsData = [
   {
@@ -57,6 +59,41 @@ export const projectsData = [
     images: {
       small: todoReactS,
       big: todoReactL,
+    },
+  },
+  {
+    id: "adminPanel",
+    linkTitle: "Admin panel",
+    title: "Admin panel",
+    type: "Frontend application",
+    label: "js",
+    mainTech: [
+      "html",
+      "css",
+      "javascript",
+      "webpack",
+      "jest",
+    ],
+    links: {
+      demo: "https://github.com/Fenix4088/Admin-panel",
+      git: "https://github.com/Fenix4088/Admin-panel",
+    },
+    desc: "Administration panel of online hardware store",
+    project: "Single page application",
+    allTech: [
+      "HTML",
+      "CSS",
+      "JS",
+      "Webpack",
+      "Jest-tests",
+    ],
+    features:
+        "REST API, Class component architecture, UNIT-tests," +
+        " slider, drag and drop and range picker developed on a native js without any plugins or libs, ability to add, remove and edit all items in the store",
+
+    images: {
+      small: adminPanelS,
+      big: adminPanelL,
     },
   },
   {
