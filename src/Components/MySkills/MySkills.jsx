@@ -13,14 +13,21 @@ export const MySkills = () => {
                     <div className="header__my-skils">
                         <h3 className="header__my-skils-title">My skills:</h3>
                         <ul className="header__my-skils-lists">
+
                             <li className="header__my-skils-list">
-                                HTML, CSS(SCSS/LESS), RWD, AWD
+                                React.js + Redux
                             </li>
                             <li className="header__my-skils-list">
                                 JavaScript, TypeScript
                             </li>
                             <li className="header__my-skils-list">
-                                React.js + Redux
+                                redux-thunk/saga, redux-toolkit
+                            </li>
+                            <li className="header__my-skils-list">
+                                HTML, CSS(SCSS/LESS), RWD, AWD
+                            </li>
+                            <li className="header__my-skils-list">
+                                Axios, REST API
                             </li>
                             <li className="header__my-skils-list">
                                 Photoshop, Figma, Avocode
@@ -32,7 +39,7 @@ export const MySkills = () => {
                                 UNIT-test(JEST), Storybook, TDD
                             </li>
                             <li className="header__my-skils-list">
-                                Material-UI, Ant Design, styled-components, module-css, Axios, REST API
+                                Material-UI, Ant Design, styled-components, module-css,
                             </li>
                         </ul>
                         <PortfolioBTN
